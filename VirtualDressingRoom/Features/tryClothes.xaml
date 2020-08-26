@@ -1,0 +1,93 @@
+﻿<Window x:Class="VirtualDressingRoom.tryClothes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualDressingRoom"
+        mc:Ignorable="d"  WindowStartupLocation="CenterScreen"
+         Title="Try Clothes" Height="768" Width="1366" Loaded="Window_Loaded" Closed="Window_Closed" WindowState="Maximized">
+
+    <StackPanel Margin="10">
+        <StackPanel.Resources>
+            <Style x:Key="MyButtonStyle" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </StackPanel.Resources>
+
+        <Grid>
+            <Canvas>
+                <Grid>
+                    <Viewbox VerticalAlignment="Center"  Height="536" Margin="100,153,350,360">
+                        <Grid Width="76" Height="45">
+
+                            <Image VerticalAlignment="Top" Name="camera">
+                                <Image.Effect>
+                                    <DropShadowEffect Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="1"  />
+                                </Image.Effect>
+                            </Image>
+                            <Canvas Name="canvas" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        </Grid>
+                    </Viewbox>
+
+                    <Grid HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="1366" Background="#38A1F3">
+                        <Label x:Name="TitleLbl" Content="Virtual Dressing Room" HorizontalAlignment="Left" Margin="439,20,0,0" Height="94" VerticalAlignment="Top" Width="517" FontSize="48" Foreground="White" FontWeight="Bold"/>
+
+                        <Button Style="{StaticResource MyButtonStyle}" Height="70" Width="70" x:Name="border" HorizontalAlignment="Left" Margin="1270,25,0,0" VerticalAlignment="Top"  Click="button_Click" Background="#38A1F3" BorderBrush="#FF3B5998">
+                            <Image Source="/VirtualDressingRoom;component/Resource/home.png"></Image>
+                        </Button>
+                        <Button Style="{StaticResource MyButtonStyle}" Click="button_ClickY" x:Name="gender1" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="94" Height="94" Background="#38A1F3" BorderBrush="#FF3B5998">
+
+                            <Image x:Name="image4" HorizontalAlignment="Left"  VerticalAlignment="Top" Height="70" Width="70" Margin="13,0,0,0" Stretch="Fill" />
+                        </Button>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Background="#f7f7f7" Height="617" VerticalAlignment="Top" Width="202" Margin="1158,114,0,0">
+                        <Image x:Name="clotha" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130" Stretch="Fill" Margin="27,19,0,0">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="firstEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="10"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image x:Name="clothb" HorizontalAlignment="Left" Height="130" VerticalAlignment="Top" Width="130" Margin="27,170,0,0" Stretch="Fill" >
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="secondEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image x:Name="clothc" HorizontalAlignment="Left" Height="130" Margin="27,327,0,0" VerticalAlignment="Top" Width="130" Stretch="Fill">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="thirdEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+
+                        <Image x:Name="clothd" HorizontalAlignment="Left" Height="130" Margin="27,478,0,0" VerticalAlignment="Top" Width="130" Stretch="Fill">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="fourthEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+
+                    </Grid>
+                    <Button x:Name="upButton" HorizontalAlignment="Left" Margin="1080,125,0,0" VerticalAlignment="Top" Width="75" Background="White" Click="up_Click" BorderThickness="0" >
+                        <Image x:Name="upImage" Source="/VirtualDressingRoom;component/Resource/up_arrow.png"/>
+
+                    </Button>
+
+                    <Button x:Name="downButton" HorizontalAlignment="Left" Margin="1080,652,0,0" VerticalAlignment="Top" Width="75" Height="75" Background="White" Click="down_Click" BorderThickness="0">
+                        <Image x:Name="downImage" Source="/VirtualDressingRoom;component/Resource/down_arrow.png" RenderTransformOrigin="0.534,-0.329"/>
+                    </Button>
+                    <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="70,691,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="57,126,0,0" VerticalAlignment="Top" Width="281"/>
+
+
+
+                </Grid>
+            </Canvas>
+        </Grid>
+    </StackPanel>
+</Window>

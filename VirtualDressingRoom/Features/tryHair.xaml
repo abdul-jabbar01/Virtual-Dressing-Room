@@ -1,0 +1,89 @@
+﻿<Window x:Class="VirtualDressingRoom.tryHair"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualDressingRoom"
+        mc:Ignorable="d"  WindowStartupLocation="CenterScreen"
+         Title="Try Hair Color" Height="768" Width="1366" Loaded="Window_Loaded" Closed="Window_Closed" WindowState="Maximized">
+
+    <StackPanel Margin="10">
+        <StackPanel.Resources>
+            <Style x:Key="MyButtonStyle" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </StackPanel.Resources>
+
+
+        <Grid>
+            <Canvas>
+                <Grid>
+
+                    <Viewbox VerticalAlignment="Center" HorizontalAlignment="Right" Height="546" Margin="0,157,685,308" Width="592">
+                        <Grid Width="329" Height="308">
+                            <Image VerticalAlignment="Top" HorizontalAlignment="Left" Name="camera" />
+                            <Canvas Name="canvas" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        </Grid>
+                    </Viewbox>
+
+                    <Grid HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="1366" Background="#38A1F3" >
+                        <Label x:Name="TitleLbl" Content="Virtual Dressing Room" HorizontalAlignment="Left" Margin="439,20,0,0" Height="94" VerticalAlignment="Top" Width="517" FontSize="48" Foreground="White" FontWeight="Bold"/>
+
+                        <Button Style="{StaticResource MyButtonStyle}" x:Name="border" Height="70" Width="70" HorizontalAlignment="Left" Margin="1270,25,0,0" VerticalAlignment="Top"  Click="button_ClickX" Background="#38A1F3" BorderBrush="#FF3B5998">
+                            <Image Source="/VirtualDressingRoom;component/Resource/home.png"></Image>
+                        </Button>
+                        <Button Style="{StaticResource MyButtonStyle}" Click="button_ClickY" x:Name="gender1" HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="94" Height="94" Background="#38A1F3" BorderBrush="#FF3B5998">
+
+                            <Image x:Name="image4" Height="70" Width="70" HorizontalAlignment="Left"  VerticalAlignment="Top"  Margin="13,0,0,0" Stretch="Fill" Source="/VirtualDressingRoom;component/Resource/female.png"/>
+                        </Button>
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Background="#f7f7f7" Height="621" VerticalAlignment="Top" Width="202" Margin="1163,119,0,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1697*"/>
+                            <ColumnDefinition Width="150*"/>
+                        </Grid.ColumnDefinitions>
+                        <Image HorizontalAlignment="Left" Name="hair1" Height="130" VerticalAlignment="Top" Width="130" Margin="34,30,0,0" Source="/VirtualDressingRoom;component/Resource/1Hair.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="firstEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="10"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image HorizontalAlignment="Left" Name="hair2" Height="130" VerticalAlignment="Top" Width="130" Margin="38,205,0,0" Source="/VirtualDressingRoom;component/Resource/2Hair.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="secondEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image HorizontalAlignment="Left" Name="hair3" Height="130" VerticalAlignment="Top" Width="130" Margin="38,373,0,0" Source="/VirtualDressingRoom;component/Resource/3Hair.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="thirdEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+
+                    </Grid>
+                    <!--<Image x:Name="image2" HorizontalAlignment="Left" Height="63" Margin="547,35,0,0" VerticalAlignment="Top" Width="392" Source="Resource\icon.png"/>-->
+                    <Button x:Name="button" Content="Capture" HorizontalAlignment="Left" Margin="875,431,0,0" VerticalAlignment="Top" Width="128" Height="50" FontSize="17" Click="button_Click_1"/>
+                    <Button x:Name="button_Copy1" Content="Browse" HorizontalAlignment="Left" Margin="875,347,0,0" VerticalAlignment="Top" Width="128" Height="50" FontSize="17"  RenderTransformOrigin="-1.133,0.512" Click="button_Copy1_Click" />
+
+                    <Button x:Name="upButton" HorizontalAlignment="Left" Margin="1080,125,0,0" VerticalAlignment="Top" Width="75" Background="White" Click="Left_Click" BorderThickness="0" >
+                        <Image x:Name="upImage" Source="/VirtualDressingRoom;component/Resource/up_arrow.png"/>
+
+                    </Button>
+
+                    <Button x:Name="downButton" HorizontalAlignment="Left" Margin="1080,652,0,0" VerticalAlignment="Top" Width="75" Height="75" Background="White" BorderThickness="0" Click="Right_Click">
+                        <Image x:Name="downImage" Source="/VirtualDressingRoom;component/Resource/down_arrow.png" RenderTransformOrigin="0.534,-0.329"/>
+                    </Button>
+                    <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="49,135,0,0" VerticalAlignment="Top" Width="364"/>
+
+                </Grid>
+            </Canvas>
+        </Grid>
+    </StackPanel>
+</Window>
