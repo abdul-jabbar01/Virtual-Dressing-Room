@@ -1,0 +1,92 @@
+﻿<Window x:Class="VirtualDressingRoom.tryLipstick"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VirtualDressingRoom"
+        mc:Ignorable="d"  WindowStartupLocation="CenterScreen"
+        Title="Try Lipstick" Height="768" Width="1366" Loaded="Window_Loaded" WindowState="Maximized">
+
+    <StackPanel Margin="10">
+        <StackPanel.Resources>
+            <Style x:Key="MyButtonStyle" TargetType="Button">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Grid Background="{TemplateBinding Background}">
+                                <ContentPresenter HorizontalAlignment="Center"
+                        VerticalAlignment="Center"/>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </StackPanel.Resources>
+
+        <Grid>
+            <Canvas>
+                <Grid Width="1366" Height="768">
+
+                    <Viewbox VerticalAlignment="Center" HorizontalAlignment="Right" Height="500" Margin="0,222,202,289"/>
+
+                    <Grid HorizontalAlignment="Left" Height="114" VerticalAlignment="Top" Width="1366" Background="#38A1F3">
+                        <Label x:Name="TitleLbl" Content="Virtual Dressing Room" HorizontalAlignment="Left" Margin="439,20,0,0" Height="94" VerticalAlignment="Top" Width="517" FontSize="48" Foreground="White" FontWeight="Bold"/>
+                        <Button Style="{StaticResource MyButtonStyle}" Height="70" Width="70" x:Name="border" HorizontalAlignment="Left" Margin="1270,25,0,0" VerticalAlignment="Top"  Click="button_ClickX" Background="#38A1F3" BorderBrush="#FF3B5998">
+                            <Image Source="/VirtualDressingRoom;component/Resource/home.png"></Image>
+                        </Button>
+                        <Button Style="{StaticResource MyButtonStyle}"  x:Name="gender1"  HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Width="94" Height="94" Background="#38A1F3" BorderBrush="#FF3B5998" Click="button_ClickY">
+
+                            <Image x:Name="image4" HorizontalAlignment="Left" Height="70" Width="70" VerticalAlignment="Top"  Margin="13,0,0,0" Stretch="Fill" Source="/VirtualDressingRoom;component/Resource/female.png"/>
+                        </Button>
+                        <Image x:Name="image1" HorizontalAlignment="Left" Height="100" Margin="488,41,0,-27" VerticalAlignment="Top" Width="100"/>
+                        <!--<Image x:Name="image2" HorizontalAlignment="Left" Height="63" Margin="547,35,0,0" VerticalAlignment="Top" Width="392" Source="g"/>-->
+                    </Grid>
+                    <Grid HorizontalAlignment="Left" Background="#f7f7f7" Height="617" VerticalAlignment="Top" Width="202" Margin="1158,114,0,0">
+                        <Image HorizontalAlignment="Left" Name="lip1" Height="130" VerticalAlignment="Top" Width="130" Margin="27,19,0,0" Source="/VirtualDressingRoom;component/Resource/lip1.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="firstEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="10"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image HorizontalAlignment="Left" Name="lip3" Height="130" VerticalAlignment="Top" Width="130" Margin="27,327,0,0" Source="/VirtualDressingRoom;component/Resource/lip2.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="thirdEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image HorizontalAlignment="Left" Name="lip4" Height="130" VerticalAlignment="Top" Width="130" Margin="27,478,0,0" Source="/VirtualDressingRoom;component/Resource/lip6.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="fourthEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+                        <Image HorizontalAlignment="Left" Name="lip2" Height="130" VerticalAlignment="Top" Width="130" Margin="27,170,0,0" Source="/VirtualDressingRoom;component/Resource/lip5.png">
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="secondEffect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+                    </Grid>
+
+                    <Grid Margin="209,170,582,73" RenderTransformOrigin="-0.578,0.506">
+                        <Image VerticalAlignment="Top" HorizontalAlignment="Left" x:Name="camera" >
+                            <Image.Effect>
+                                <DropShadowEffect x:Name="effect" Color="#FF868686" Direction="0" ShadowDepth="0" BlurRadius="3"  />
+                            </Image.Effect>
+                        </Image>
+                        <Canvas x:Name="canvas" VerticalAlignment="Top" HorizontalAlignment="Left" />
+                        <Image x:Name="image" HorizontalAlignment="Left" Height="100" Margin="129,117,0,0" VerticalAlignment="Top" Width="100"/>
+                    </Grid>
+
+                    <Button x:Name="upButton" HorizontalAlignment="Left" Margin="1080,125,0,0" VerticalAlignment="Top" Width="75" Background="White" Click="button_Click" BorderThickness="0" >
+                        <Image x:Name="upImage" Source="/VirtualDressingRoom;component/Resource/up_arrow.png"/>
+
+                    </Button>
+
+                    <Button x:Name="downButton" HorizontalAlignment="Left" Margin="1080,652,0,0" VerticalAlignment="Top" Width="75" Height="75" Background="White" Click="moveRight_Click" BorderThickness="0">
+                        <Image x:Name="downImage" Source="/VirtualDressingRoom;component/Resource/down_arrow.png" RenderTransformOrigin="0.5,0.5"/>
+                    </Button>
+                    <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="49,139,0,0" VerticalAlignment="Top" Width="397"/>
+
+
+                </Grid>
+            </Canvas>
+        </Grid>
+    </StackPanel>
+</Window>

@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E75B0FE0-1232-429C-9B11-6A981AAE2290}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VirtualDressingRoom</RootNamespace>
+    <AssemblyName>VirtualDressingRoom</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Imaging, Version=2.2.5.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Imaging.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Math, Version=2.2.5.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Math.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Contrib, Version=3.0.0.2157, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.Cuda, Version=3.0.0.2157, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.Cuda.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2010, Version=3.0.0.2154, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.DebuggerVisualizers.VS2010.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2012, Version=3.0.0.2154, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.DebuggerVisualizers.VS2012.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2013, Version=3.0.0.2154, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.DebuggerVisualizers.VS2013.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.DebuggerVisualizers.VS2015, Version=3.0.0.2154, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.DebuggerVisualizers.VS2015.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.GPU, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.GPU.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.ML, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.ML.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.CV.VideoStab, Version=3.0.0.2157, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.CV.VideoStab.dll</HintPath>
+    </Reference>
+    <Reference Include="Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Emgu.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Kinect.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Kinect.Face, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Microsoft.Kinect.Face.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Skin.cs" />
+    <Page Include="Features\tryClothes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\tryEye.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\tryHair.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Features\tryLipstick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="genderDetection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Features\tryClothes.xaml.cs">
+      <DependentUpon>tryClothes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\tryEye.xaml.cs">
+      <DependentUpon>tryEye.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\tryHair.xaml.cs">
+      <DependentUpon>tryHair.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Features\tryLipstick.xaml.cs">
+      <DependentUpon>tryLipstick.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="genderDetection.xaml.cs">
+      <DependentUpon>genderDetection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="mainWindowMale.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="mainWindowMale.xaml.cs">
+      <DependentUpon>mainWindowMale.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\1Hair.png" />
+    <Resource Include="Resource\2Hair.png" />
+    <Resource Include="Resource\3Hair.png" />
+    <Resource Include="Resource\clothes.png" />
+    <Resource Include="Resource\clothes12.png" />
+    <Resource Include="Resource\down_arrow.png" />
+    <Resource Include="Resource\eyewear.png" />
+    <Resource Include="Resource\eyewear1.jpg" />
+    <Resource Include="Resource\female.png" />
+	
+    <Resource Include="Resource\grab.png" />
+    <Resource Include="Resource\hairdye.png" />
+    <Resource Include="Resource\hairdye1.jpg" />
+    <Resource Include="Resource\home - Copy.png" />
+    <Resource Include="Resource\home.png" />
+    <Resource Include="Resource\icon.png" />
+    <Resource Include="Resource\left_arrow.jpg" />
+    <Resource Include="Resource\left_arrow.png" />
+    <Resource Include="Resource\lens1.jpg" />
+    <Resource Include="Resource\lens2.jpg" />
+    <Resource Include="Resource\lens3.jpg" />
+    <Resource Include="Resource\lens4.jpg" />
+    <Resource Include="Resource\lens5.jpg" />
+    <Resource Include="Resource\lip1.png" />
+    <Resource Include="Resource\lip2.png" />
+    <Resource Include="Resource\lip3.png" />
+    <Resource Include="Resource\lip4.png" />
+    <Resource Include="Resource\lip5.png" />
+    <Resource Include="Resource\lip6.png" />
+    <Resource Include="Resource\lip7.png" />
+    <Resource Include="Resource\lips2.png" />
+    <Resource Include="Resource\lips20.jpg" />
+    <Resource Include="Resource\lips3.jpg" />
+    <Resource Include="Resource\lips4.jpg" />
+    <Resource Include="Resource\logout.png" />
+    <Resource Include="Resource\m1.jpg" />
+    <Resource Include="Resource\m2.jpg" />
+    <Resource Include="Resource\m3.jpg" />
+    <Resource Include="Resource\m4.jpg" />
+    <Resource Include="Resource\male.png" />
+    <Resource Include="Resource\ok.png" />
+    <Resource Include="Resource\rightarrow.jpg" />
+    <Resource Include="Resource\rightarrow.png" />
+    <Resource Include="Resource\right_arrow.png" />
+    <Resource Include="Resource\selection.png" />
+    <Resource Include="Resource\swipeleft.png" />
+    <Resource Include="Resource\swiperight.png" />
+    <Resource Include="Resource\up_arrow.png" />
+	<Resource Include="Resource\clothes for women\29704_LTP.jpg" />
+	<Resource Include="Resource\clothes for women\53023_BBY.jpg" />
+	<Resource Include="Resource\clothes for women\53027_RLB.jpg" />
+	<Resource Include="Resource\clothes for women\7436feedad1f3f2ea43d7182128de806.jpg" />
+	<Resource Include="Resource\clothes for women\d1f8634bdfd74cea51415258773417a9.jpg" />
+	<Resource Include="Resource\clothes for women\dress-shirt-design-for-women-21.jpg" />
+	<Resource Include="Resource\clothes for women\sundowner-shirt.jpg" />
+	<Resource Include="Resource\eyewear frames\1Glass.png" />
+	<Resource Include="Resource\eyewear frames\2Glass.png" />
+	<Resource Include="Resource\eyewear frames\3Glass.png" />
+	<Resource Include="Resource\eyewear frames\4Glass.png" />
+	<Resource Include="Resource\eyewear frames\5Glass.png" />
+	<Resource Include="Resource\eyewear frames\6Glass.png" />
+    <Content Include="opencv_core220.dll" />
+    <Content Include="opencv_imgproc220.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "NuiDatabase" "destination" /c /y /i /r</PostBuildEvent>
+  </PropertyGroup>
+</Project>
